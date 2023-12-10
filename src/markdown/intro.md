@@ -8,4 +8,4 @@
 
 本站采用的技术栈：Vue3、Vite、TypeScript、VueRouter、pnpm 等。
 
-下一节：[安装](/doc/install)
+下一节：[安装](#/doc/install)
