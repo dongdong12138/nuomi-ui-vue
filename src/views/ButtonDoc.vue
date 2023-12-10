@@ -1,5 +1,9 @@
 <script setup lang="ts">
 import NButton from '@/lib/NButton.vue';
+
+const handleClick = () => {
+  console.log('点击事件');
+};
 </script>
 
 <template>
@@ -51,6 +55,9 @@ import NButton from '@/lib/NButton.vue';
 
   <h4>支持 loading 属性</h4>
   <n-button loading>加载中</n-button>
+
+  <h4>支持事件</h4>
+  <n-button @click="handleClick">按钮</n-button>
 </template>
 
 <style scoped lang="scss">
