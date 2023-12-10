@@ -1,4 +1,4 @@
-import{d as n,h as r,o as a,c as o,u as s}from"./index-alISrTpw.js";const e=n({name:"Markdown"}),t=()=>r("div",{innerHTML:`<h1>安装</h1>
+import{d as n,h as r,o as a,c as o,u as s}from"./index-FNBE2Nhf.js";const e=n({name:"Markdown"}),t=()=>r("div",{innerHTML:`<h1>安装</h1>
 <p>打开终端运行下列命令：</p>
 <pre><code class="language-shell">npm install nuomi-ui-vue
 
