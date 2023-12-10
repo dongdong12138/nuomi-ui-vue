@@ -33,5 +33,35 @@ import TopNav from '@/components/TopNav.vue';
 </template>
 
 <style scoped lang="scss">
+.layout {
+  height: calc(100vh - 80px);
+  display: flex;
+}
 
+aside {
+  width: 300px;
+  box-shadow: 5px 0 5px rgba(51,51,51,.1);
+  overflow-y: auto;
+  padding: 0 40px;
+  > h2 {
+    margin: 20px 0;
+  }
+  > ol > li {
+    > a {
+      display: block;
+      padding: 8px 16px;
+    }
+    .router-link-active {
+      color: #409eff; font-weight: bold;
+      background: rgba(64, 158, 255, .1);
+      border-radius: 8px;
+    }
+  }
+}
+
+main {
+  flex: 1;
+  overflow-y: auto;
+  padding: 40px;
+}
 </style>

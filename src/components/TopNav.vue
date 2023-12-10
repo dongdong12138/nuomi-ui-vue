@@ -37,7 +37,7 @@
 .topNav {
   box-shadow: 0 5px 5px rgba(51,51,51,.1);
   display: flex; justify-content: center; align-items: center;
-  padding: 16px;
+  padding: 16px 20px;
   position: relative; z-index: 1;
 }
 
