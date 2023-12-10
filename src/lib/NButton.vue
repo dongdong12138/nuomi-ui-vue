@@ -49,7 +49,8 @@ $grey: #909399;
   background: #fff;
   border: 1px solid $border-color; border-radius: $radius;
   box-shadow: 0 1px 0 fade-out(#000, 0.95);
-  cursor: pointer; white-space: nowrap;
+  cursor: pointer;
+  white-space: nowrap;
   display: inline-flex; justify-content: center; align-items: center;
   padding: 0 12px;
   & + & {
@@ -65,29 +66,6 @@ $grey: #909399;
   &::-moz-focus-inner {
     border: 0;
   }
-  // 禁用
-  &[disabled] {
-    color: $grey;
-    border-color: $grey;
-    cursor: not-allowed;
-    &:hover {
-      border-color: $grey;
-    }
-  }
-  > .loadingIcon {
-    display: inline-block;
-    width: 14px; height: 14px;
-    border-style: solid; border-width: 2px; border-color: lighten($blue, 20%) lighten($blue, 10%) $blue transparent; border-radius: 8px;
-    margin-right: 4px;
-    animation: nuomi-spin 1s infinite linear;
-  }
-  @keyframes nuomi-spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-  }
-}
-
-.nuomi-button {
   // 大尺寸
   &.nuomi-size-big {
     font-size: 24px;
@@ -100,9 +78,6 @@ $grey: #909399;
     height: 20px;
     padding: 0 4px;
   }
-}
-
-.nuomi-button {
   // 主要按钮
   &.nuomi-level-main {
     color: white;
@@ -123,77 +98,77 @@ $grey: #909399;
       border-color: darken($red, 10%);
     }
   }
-}
-
-.nuomi-button {
-  // 链接形式
-  &.nuomi-theme-link {
-    background: none;
-    border-color: transparent;
-    box-shadow: none;
-    &:hover, &:focus {
-      color: inherit;
-      text-decoration: underline;
-      background: none;
-      border-color: transparent;
-    }
-    // 链接形式-主要按钮
-    &.nuomi-level-main {
-      color: $blue;
-      &:hover, &:focus {
-        color: darken($blue, 10%);
-      }
-    }
-    // 链接形式-危险按钮
-    &.nuomi-level-danger {
-      color: $red;
-      &:hover, &:focus {
-        color: darken($red, 10%);
-      }
-    }
-    // 链接形式-禁用
-    &[disabled] {
-      cursor: not-allowed;
-      color: $grey;
-      &:hover {
-        text-decoration: none;
-        background-color: transparent;
-      }
+  // 禁用
+  &[disabled] {
+    color: $grey;
+    border-color: $grey;
+    cursor: not-allowed;
+    &:hover {
+      border-color: $grey;
     }
   }
-  // 文本形式
-  &.nuomi-theme-text {
-    color: inherit;
-    border-color: transparent;
+  // loading
+  > .loadingIcon {
+    display: inline-block;
+    width: 14px; height: 14px;
+    border-style: solid; border-width: 2px; border-color: lighten($blue, 20%) lighten($blue, 10%) $blue transparent; border-radius: 8px;
+    margin-right: 4px;
+    animation: nuomi-spin 1s infinite linear;
+  }
+  @keyframes nuomi-spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+}
+
+// 链接形式
+.nuomi-button.nuomi-theme-link {
+  background: none;
+  border-color: transparent;
+  box-shadow: none;
+  &:hover, &:focus {
+    text-decoration: underline;
     background: none;
-    box-shadow: none;
+    border-color: transparent;
+  }
+  // 链接形式-主要按钮
+  &.nuomi-level-main {
+    color: $blue;
     &:hover, &:focus {
-      background: darken(white, 5%);
+      color: darken($blue, 10%);
     }
-    // 文本形式-主要按钮
-    &.nuomi-level-main {
-      color: $blue;
-      &:hover, &:focus {
-        color: darken($blue, 10%);
-        border-color: transparent;
-      }
+  }
+  // 链接形式-危险按钮
+  &.nuomi-level-danger {
+    color: $red;
+    &:hover, &:focus {
+      color: darken($red, 10%);
     }
-    // 文本形式-危险按钮
-    &.nuomi-level-danger {
-      color: $red;
-      &:hover, &:focus {
-        color: darken($red, 10%);
-        border-color: transparent;
-      }
+  }
+}
+
+// 文本形式
+.nuomi-button.nuomi-theme-text {
+  background: none;
+  border-color: transparent;
+  box-shadow: none;
+  &:hover, &:focus {
+    background: darken(white, 5%);
+  }
+  // 文本形式-主要按钮
+  &.nuomi-level-main {
+    color: $blue;
+    &:hover, &:focus {
+      color: darken($blue, 10%);
+      border-color: transparent;
     }
-    // 文本形式-禁用
-    &[disabled] {
-      cursor: not-allowed;
-      color: $grey;
-      &:hover {
-        text-decoration: none;
-        background-color: transparent;
-      }
+  }
+  // 文本形式-危险按钮
+  &.nuomi-level-danger {
+    color: $red;
+    &:hover, &:focus {
+      color: darken($red, 10%);
+      border-color: transparent;
     }
   }
 }
