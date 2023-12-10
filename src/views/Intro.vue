@@ -1,9 +1,9 @@
 <script setup lang="ts">
-
+import md from '@/markdown/intro.md'
 </script>
 
 <template>
-  <div>介绍页</div>
+  <article v-html="(md as any).render().props.innerHTML" class="markdown-body"></article>
 </template>
 
 <style scoped lang="scss">
