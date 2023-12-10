@@ -12,10 +12,10 @@ const router = createRouter({
         { path: 'intro', component: () => import('@/views/Intro.vue') },
         { path: 'install', component: () => import('@/views/Install.vue') },
         { path: 'get-started', component: () => import('@/views/GetStarted.vue') },
-        { path: 'button', component: () => import('@/views/Button.vue') },
-        { path: 'switch', component: () => import('@/views/Switch.vue') },
-        { path: 'dialog', component: () => import('@/views/Dialog.vue') },
-        { path: 'tabs', component: () => import('@/views/Tabs.vue') },
+        { path: 'button', component: () => import('@/views/ButtonDoc.vue') },
+        { path: 'switch', component: () => import('@/views/SwitchDoc.vue') },
+        { path: 'dialog', component: () => import('@/views/DialogDoc.vue') },
+        { path: 'tabs', component: () => import('@/views/TabsDoc.vue') },
       ]
     },
   ]
