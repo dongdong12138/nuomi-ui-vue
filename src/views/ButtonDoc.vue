@@ -43,6 +43,11 @@ import NButton from '@/lib/NButton.vue';
     <n-button theme="text">普通文字按钮</n-button>
     <n-button theme="text" level="danger">危险文字按钮</n-button>
   </div>
+
+  <h4>支持 disabled 属性</h4>
+  <n-button disabled>禁用按钮</n-button>
+  <n-button theme="link" disabled>禁用链接按钮</n-button>
+  <n-button theme="text" disabled>禁用按钮</n-button>
 </template>
 
 <style scoped lang="scss">

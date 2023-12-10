@@ -5,10 +5,12 @@ const props = withDefaults(defineProps<{
   theme?: string
   size?: string
   level?: string
+  disabled?: boolean
 }>(), {
   theme: '',
   size: '',
-  level: ''
+  level: '',
+  disabled: false
 })
 
 const classes = computed(() => {
@@ -22,7 +24,7 @@ const classes = computed(() => {
 </script>
 
 <template>
-  <button :class="classes" class="nuomi-button">
+  <button :disabled="disabled" :class="classes" class="nuomi-button">
     <slot></slot>
   </button>
 </template>
@@ -34,6 +36,7 @@ $border-color: #d9d9d9;
 $radius: 4px;
 $blue: #40a9ff;
 $red: #f56c6c;
+$grey: #909399;
 
 // 基础样式
 .nuomi-button {
@@ -58,6 +61,15 @@ $red: #f56c6c;
   }
   &::-moz-focus-inner {
     border: 0;
+  }
+  // 禁用
+  &[disabled] {
+    color: $grey;
+    border-color: $grey;
+    cursor: not-allowed;
+    &:hover {
+      border-color: $grey;
+    }
   }
 }
 
@@ -125,6 +137,15 @@ $red: #f56c6c;
         color: darken($red, 10%);
       }
     }
+    // 链接形式-禁用
+    &[disabled] {
+      cursor: not-allowed;
+      color: $grey;
+      &:hover {
+        text-decoration: none;
+        background-color: transparent;
+      }
+    }
   }
   // 文本形式
   &.nuomi-theme-text {
@@ -149,6 +170,15 @@ $red: #f56c6c;
       &:hover, &:focus {
         color: darken($red, 10%);
         border-color: transparent;
+      }
+    }
+    // 文本形式-禁用
+    &[disabled] {
+      cursor: not-allowed;
+      color: $grey;
+      &:hover {
+        text-decoration: none;
+        background-color: transparent;
       }
     }
   }
