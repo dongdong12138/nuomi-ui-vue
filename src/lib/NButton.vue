@@ -2,15 +2,18 @@
 import { computed } from 'vue';
 
 const props = withDefaults(defineProps<{
-  theme: string
+  theme?: string
+  size?: string
 }>(), {
-  theme: ''
+  theme: '',
+  size: 'normal'
 })
 
 const classes = computed(() => {
-  const { theme } = props
+  const { theme, size } = props
   return {
     [`nuomi-theme-${theme}`]: theme,
+    [`nuomi-size-${size}`]: size,
   }
 })
 </script>
@@ -73,5 +76,19 @@ $blue: #40a9ff;
   &:hover, &:focus {
     background: darken(white, 5%);
   }
+}
+
+// 大尺寸
+.nuomi-button.nuomi-size-big {
+  font-size: 24px;
+  height: 48px;
+  padding: 0 16px;
+}
+
+// 小尺寸
+.nuomi-button.nuomi-size-small {
+  font-size: 12px;
+  height: 20px;
+  padding: 0 4px;
 }
 </style>
