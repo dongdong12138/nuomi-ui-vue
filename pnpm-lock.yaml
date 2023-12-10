@@ -5,6 +5,9 @@ settings:
   excludeLinksFromLockfile: false
 
 dependencies:
+  github-markdown-css:
+    specifier: ^5.4.0
+    version: 5.4.0
   vue:
     specifier: ^3.3.10
     version: 3.3.11(typescript@5.2.2)
@@ -1479,6 +1482,11 @@ packages:
       fs-extra: 11.2.0
       globby: 6.1.0
     dev: true
+
+  /github-markdown-css@5.4.0:
+    resolution: {integrity: sha512-eJhoFp9fiZ290h0vWrU5MmW0A2eeB81Lv/3ZkdtKrylJvtWi71ezGrxCcw1P2fVr82s3NvBX66SoDCN1pWLadw==}
+    engines: {node: '>=10'}
+    dev: false
 
   /glob-parent@5.1.2:
     resolution: {integrity: sha512-AOIgSQCepiJYwP3ARnGx+5VnTu2HBYdzbGP45eLw1vr3zB3vZLeyed1sC9hnbcOc9/SrMyM5RPQrkGz4aS9Zow==}

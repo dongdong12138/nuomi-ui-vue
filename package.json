@@ -14,6 +14,7 @@
     "deploy": "gh-pages -d dist -r git@github.com:dongdong12138/nuomi-ui-vue.git -b gh-pages"
   },
   "dependencies": {
+    "github-markdown-css": "^5.4.0",
     "vue": "^3.3.10",
     "vue-router": "^4.2.5"
   },
