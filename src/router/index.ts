@@ -9,13 +9,14 @@ const router = createRouter({
     {
       path: '/doc', name: 'doc', component: Doc,
       children: [
-        { path: 'intro', component: () => import('@/views/Intro.vue') },
-        { path: 'install', component: () => import('@/views/Install.vue') },
-        { path: 'get-started', component: () => import('@/views/GetStarted.vue') },
-        { path: 'button', component: () => import('@/views/ButtonDoc.vue') },
-        { path: 'switch', component: () => import('@/views/SwitchDoc.vue') },
-        { path: 'dialog', component: () => import('@/views/DialogDoc.vue') },
-        { path: 'tabs', component: () => import('@/views/TabsDoc.vue') },
+        { path: 'intro', name: 'intro', component: () => import('@/views/Intro.vue') },
+        { path: 'install', name: 'install', component: () => import('@/views/Install.vue') },
+        { path: 'get-started', name: 'getStarted', component: () => import('@/views/GetStarted.vue') },
+        { path: 'button', name: 'button', component: () => import('@/views/ButtonDoc.vue') },
+        { path: 'switch', name: 'switch', component: () => import('@/views/SwitchDoc.vue') },
+        { path: 'dialog', name: 'dialog', component: () => import('@/views/DialogDoc.vue') },
+        { path: 'tabs', name: 'tabs', component: () => import('@/views/TabsDoc.vue') },
+        { path: '', name: 'redirect', redirect: '/doc/intro' }
       ]
     },
   ]
