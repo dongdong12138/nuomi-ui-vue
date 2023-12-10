@@ -1,9 +1,24 @@
 <script setup lang="ts">
+import { computed } from 'vue';
 
+const props = withDefaults(defineProps<{
+  theme: string
+}>(), {
+  theme: ''
+})
+
+const classes = computed(() => {
+  const { theme } = props
+  return {
+    [`nuomi-theme-${theme}`]: theme,
+  }
+})
 </script>
 
 <template>
-  <button class="nuomi-button">按钮</button>
+  <button :class="classes" class="nuomi-button">
+    <slot></slot>
+  </button>
 </template>
 
 <style scoped lang="scss">
@@ -36,6 +51,27 @@ $blue: #40a9ff;
   }
   &::-moz-focus-inner {
     border: 0;
+  }
+}
+
+// 链接形式
+.nuomi-button.nuomi-theme-link {
+  color: $blue;
+  border-color: transparent;
+  box-shadow: none;
+  &:hover, &:focus {
+    color: lighten($blue, 20%);
+    text-decoration: underline;
+  }
+}
+
+// 文本形式
+.nuomi-button.nuomi-theme-text {
+  color: inherit;
+  border-color: transparent;
+  box-shadow: none;
+  &:hover, &:focus {
+    background: darken(white, 5%);
   }
 }
 </style>
