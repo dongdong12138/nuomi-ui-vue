@@ -48,6 +48,9 @@ import NButton from '@/lib/NButton.vue';
   <n-button disabled>禁用按钮</n-button>
   <n-button theme="link" disabled>禁用链接按钮</n-button>
   <n-button theme="text" disabled>禁用按钮</n-button>
+
+  <h4>支持 loading 属性</h4>
+  <n-button loading>加载中</n-button>
 </template>
 
 <style scoped lang="scss">

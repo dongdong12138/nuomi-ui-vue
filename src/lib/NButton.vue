@@ -6,11 +6,13 @@ const props = withDefaults(defineProps<{
   size?: string
   level?: string
   disabled?: boolean
+  loading?: boolean
 }>(), {
   theme: '',
   size: '',
   level: '',
-  disabled: false
+  disabled: false,
+  loading: false
 })
 
 const classes = computed(() => {
@@ -25,6 +27,7 @@ const classes = computed(() => {
 
 <template>
   <button :disabled="disabled" :class="classes" class="nuomi-button">
+    <span v-if="loading" class="loadingIcon"></span>
     <slot></slot>
   </button>
 </template>
@@ -70,6 +73,17 @@ $grey: #909399;
     &:hover {
       border-color: $grey;
     }
+  }
+  > .loadingIcon {
+    display: inline-block;
+    width: 14px; height: 14px;
+    border-style: solid; border-width: 2px; border-color: lighten($blue, 20%) lighten($blue, 10%) $blue transparent; border-radius: 8px;
+    margin-right: 4px;
+    animation: nuomi-spin 1s infinite linear;
+  }
+  @keyframes nuomi-spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
   }
 }
 
