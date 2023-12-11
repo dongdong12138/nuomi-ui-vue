@@ -1,6 +1,6 @@
 # nuomi-ui-vue
 
-这是一款基于 Vue3 的 UI 组件库，提供了 Button、Switch、Tabs、Dialog 等组件。
+这是一款基于 Vue3.3 的 UI 组件库，涵盖了 Button、Switch、Tabs、Dialog、... 等常见 UI 组件，并提供了官方文档，可在线查看代码示例，并支持 PC 和手机浏览。
 
 每个组件的源代码都简洁易懂，项目的 commit 也很清晰，欢迎各位同学进行阅读和讨论。
 
