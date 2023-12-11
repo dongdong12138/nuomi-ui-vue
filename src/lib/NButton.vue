@@ -32,7 +32,7 @@ const classes = computed(() => {
   </button>
 </template>
 
-<style scoped lang="scss">
+<style lang="scss">
 $color: #333;
 $h: 32px;
 $border-color: #d9d9d9;
