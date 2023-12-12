@@ -12,7 +12,7 @@ const props = withDefaults(defineProps<{
 });
 
 const emit = defineEmits<{
-  (e: 'update:visible', value): void
+  (e: 'update:visible', value: boolean): void
 }>();
 
 const closeDialog = () => {
