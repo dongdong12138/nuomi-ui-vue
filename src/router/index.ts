@@ -13,7 +13,7 @@ const router = createRouter({
         { path: 'install', name: 'install', component: () => import('@/views/Install.vue') },
         { path: 'get-started', name: 'getStarted', component: () => import('@/views/GetStarted.vue') },
         { path: 'button', name: 'button', component: () => import('@/views/ButtonDoc/index.vue') },
-        { path: 'switch', name: 'switch', component: () => import('@/views/SwitchDoc.vue') },
+        { path: 'switch', name: 'switch', component: () => import('@/views/SwitchDoc/index.vue') },
         { path: 'dialog', name: 'dialog', component: () => import('@/views/DialogDoc.vue') },
         { path: 'tabs', name: 'tabs', component: () => import('@/views/TabsDoc.vue') },
         { path: '', name: 'redirect', redirect: '/doc/intro' }
