@@ -1,7 +1,7 @@
 <script setup lang="ts">
 const props = withDefaults(defineProps<{
   modelValue: boolean
-  disabled: boolean
+  disabled?: boolean
 }>(), {
   modelValue: false,
   disabled: false
