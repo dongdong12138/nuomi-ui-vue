@@ -1,8 +1,10 @@
 <script setup lang="ts">
 import NButton from '@/lib/NButton.vue';
 
-withDefaults(defineProps<{
+const props = withDefaults(defineProps<{
   visible: boolean
+  ok?: Function
+  cancel?: Function
 }>(), {
   visible: false
 });
@@ -13,6 +15,14 @@ const emit = defineEmits<{
 
 const closeDialog = () => {
   emit('update:visible', false);
+};
+const ok = () => {
+  props.ok && props.ok();
+  closeDialog();
+};
+const cancel = () => {
+  props.cancel && props.cancel();
+  closeDialog();
 };
 </script>
 
@@ -33,8 +43,8 @@ const closeDialog = () => {
           <slot name="content"></slot>
         </main>
         <footer>
-          <n-button level="main">OK</n-button>
-          <n-button>Cancel</n-button>
+          <n-button level="main" @click="ok">OK</n-button>
+          <n-button @click="cancel">Cancel</n-button>
         </footer>
       </div>
     </div>
