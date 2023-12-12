@@ -33,27 +33,29 @@ const clickOverlay = () => {
 
 <template>
   <template v-if="visible">
+    <teleport to="body">
 
-    <!-- 蒙层 -->
-    <div class="nuomi-dialog-overlay" @click="clickOverlay"></div>
+      <!-- 蒙层 -->
+      <div class="nuomi-dialog-overlay" @click="clickOverlay"></div>
 
-    <!-- 主体内容 -->
-    <div class="nuomi-dialog-wrapper">
-      <div class="nuomi-dialog">
-        <header>
-          <slot name="title"></slot>
-          <span class="nuomi-dialog-close" @click="closeDialog"></span>
-        </header>
-        <main>
-          <slot name="content"></slot>
-        </main>
-        <footer>
-          <n-button level="main" @click="ok">OK</n-button>
-          <n-button @click="cancel">Cancel</n-button>
-        </footer>
+      <!-- 主体内容 -->
+      <div class="nuomi-dialog-wrapper">
+        <div class="nuomi-dialog">
+          <header>
+            <slot name="title"></slot>
+            <span class="nuomi-dialog-close" @click="closeDialog"></span>
+          </header>
+          <main>
+            <slot name="content"></slot>
+          </main>
+          <footer>
+            <n-button level="main" @click="ok">OK</n-button>
+            <n-button @click="cancel">Cancel</n-button>
+          </footer>
+        </div>
       </div>
-    </div>
 
+    </teleport>
   </template>
 </template>
 
