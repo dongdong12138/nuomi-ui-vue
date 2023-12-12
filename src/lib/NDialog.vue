@@ -5,8 +5,10 @@ const props = withDefaults(defineProps<{
   visible: boolean
   ok?: Function
   cancel?: Function
+  closeOnClickOverlay?: boolean
 }>(), {
-  visible: false
+  visible: false,
+  closeOnClickOverlay: false
 });
 
 const emit = defineEmits<{
@@ -24,13 +26,16 @@ const cancel = () => {
   props.cancel && props.cancel();
   closeDialog();
 };
+const clickOverlay = () => {
+  props.closeOnClickOverlay && closeDialog();
+};
 </script>
 
 <template>
   <template v-if="visible">
 
     <!-- 蒙层 -->
-    <div class="nuomi-dialog-overlay"></div>
+    <div class="nuomi-dialog-overlay" @click="clickOverlay"></div>
 
     <!-- 主体内容 -->
     <div class="nuomi-dialog-wrapper">
