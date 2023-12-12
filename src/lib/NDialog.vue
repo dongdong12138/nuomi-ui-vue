@@ -1,27 +1,45 @@
 <script setup lang="ts">
 import NButton from '@/lib/NButton.vue';
+
+withDefaults(defineProps<{
+  visible: boolean
+}>(), {
+  visible: false
+});
+
+const emit = defineEmits<{
+  (e: 'update:visible', value): void
+}>();
+
+const closeDialog = () => {
+  emit('update:visible', false);
+};
 </script>
 
 <template>
-  <!-- 蒙层 -->
-  <div class="nuomi-dialog-overlay"></div>
+  <template v-if="visible">
 
-  <!-- 主体内容 -->
-  <div class="nuomi-dialog-wrapper">
-    <div class="nuomi-dialog">
-      <header>
-        <slot name="title"></slot>
-        <span class="nuomi-dialog-close"></span>
-      </header>
-      <main>
-        <slot name="content"></slot>
-      </main>
-      <footer>
-        <n-button level="main">OK</n-button>
-        <n-button>Cancel</n-button>
-      </footer>
+    <!-- 蒙层 -->
+    <div class="nuomi-dialog-overlay"></div>
+
+    <!-- 主体内容 -->
+    <div class="nuomi-dialog-wrapper">
+      <div class="nuomi-dialog">
+        <header>
+          <slot name="title"></slot>
+          <span class="nuomi-dialog-close" @click="closeDialog"></span>
+        </header>
+        <main>
+          <slot name="content"></slot>
+        </main>
+        <footer>
+          <n-button level="main">OK</n-button>
+          <n-button>Cancel</n-button>
+        </footer>
+      </div>
     </div>
-  </div>
+
+  </template>
 </template>
 
 <style lang="scss">
