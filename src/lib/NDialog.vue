@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import NButton from '@/lib/NButton.vue';
+import NButton from './NButton.vue';
 
 const props = withDefaults(defineProps<{
   visible: boolean
