@@ -14,7 +14,7 @@ const router = createRouter({
         { path: 'get-started', name: 'getStarted', component: () => import('@/views/GetStarted.vue') },
         { path: 'button', name: 'button', component: () => import('@/views/ButtonDoc/index.vue') },
         { path: 'switch', name: 'switch', component: () => import('@/views/SwitchDoc/index.vue') },
-        { path: 'dialog', name: 'dialog', component: () => import('@/views/DialogDoc.vue') },
+        { path: 'dialog', name: 'dialog', component: () => import('@/views/DialogDoc/index.vue') },
         { path: 'tabs', name: 'tabs', component: () => import('@/views/TabsDoc.vue') },
         { path: '', name: 'redirect', redirect: '/doc/intro' }
       ]

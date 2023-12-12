@@ -1,0 +1,92 @@
+<script setup lang="ts">
+import NButton from '@/lib/NButton.vue';
+</script>
+
+<template>
+  <!-- 蒙层 -->
+  <div class="nuomi-dialog-overlay"></div>
+
+  <!-- 主体内容 -->
+  <div class="nuomi-dialog-wrapper">
+    <div class="nuomi-dialog">
+      <header>
+        标题<span class="nuomi-dialog-close"></span>
+      </header>
+      <main>
+        内容内容内容
+      </main>
+      <footer>
+        <n-button level="main">OK</n-button>
+        <n-button>Cancel</n-button>
+      </footer>
+    </div>
+  </div>
+</template>
+
+<style lang="scss">
+$radius: 4px;
+$border-color: #d9d9d9;
+
+// 蒙层
+.nuomi-dialog-overlay {
+  width: 100vw; height: 100vh;
+  background: fade_out(black, 0.5);
+  position: fixed; left: 0; top: 0;
+  z-index: 10;
+}
+
+// 主体内容
+.nuomi-dialog-wrapper {
+  position: fixed; left: 50%; top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 11;
+}
+.nuomi-dialog {
+  min-width: 15em;
+  max-width: 90%;
+  background: #fff;
+  border-radius: $radius;
+  box-shadow: 0 0 3px fade-out(black, 0.5);
+  > header {
+    font-size: 20px;
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1px solid $border-color;
+    padding: 12px 16px;
+  }
+  > main {
+    padding: 12px 16px;
+  }
+  > footer {
+    border-top: 1px solid $border-color;
+    text-align: right;
+    padding: 12px 16px;
+  }
+}
+
+// 关闭按钮
+.nuomi-dialog-close {
+  display: inline-block;
+  width: 32px; height: 32px;
+  border-radius: 32px;
+  cursor: pointer;
+  position: relative;
+  &::before, &::after {
+    content: "";
+    width: 50%; height: 1px;
+    background: black;
+    position: absolute; left: 50%; top: 50%;
+  }
+  &::before {
+    transform: translate(-50%, -50%) rotate(-45deg);
+  }
+  &::after {
+    transform: translate(-50%, -50%) rotate(45deg);
+  }
+  &:hover {
+    background-color: #f57272;
+    &::before, &::after {
+      background-color: #fff;
+    }
+  }
+}
+</style>
