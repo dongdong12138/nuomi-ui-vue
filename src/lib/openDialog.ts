@@ -1,14 +1,23 @@
 import { createApp, h } from 'vue';
+import type { VNode } from 'vue';
 import NDialog from './NDialog.vue';
 
-export const openDialog = options => {
+interface InterOptions {
+  title: string | VNode;
+  content: string | VNode;
+  ok?: Function;
+  cancel?: Function;
+  closeOnClickOverlay?: boolean;
+}
+
+export const openDialog = (options: InterOptions) => {
   const { title, content, ok, cancel, closeOnClickOverlay } = options;
 
   const div = document.createElement('div');
   document.body.appendChild(div);
 
   const closeDialog = () => {
-    app.unmount(div);
+    app.unmount();
     div.remove();
   };
 
