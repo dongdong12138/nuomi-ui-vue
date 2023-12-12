@@ -10,10 +10,11 @@ import NButton from '@/lib/NButton.vue';
   <div class="nuomi-dialog-wrapper">
     <div class="nuomi-dialog">
       <header>
-        标题<span class="nuomi-dialog-close"></span>
+        <slot name="title"></slot>
+        <span class="nuomi-dialog-close"></span>
       </header>
       <main>
-        内容内容内容
+        <slot name="content"></slot>
       </main>
       <footer>
         <n-button level="main">OK</n-button>
