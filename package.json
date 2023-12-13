@@ -1,6 +1,6 @@
 {
   "name": "nuomi-ui-vue",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "files": ["dist/lib/*"],
   "main": "dist/lib/nuomi.js",
   "type": "module",
