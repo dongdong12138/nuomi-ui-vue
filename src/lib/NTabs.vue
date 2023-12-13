@@ -10,7 +10,7 @@ const emit = defineEmits<{
   (e: 'update:selected', value: string): void
 }>();
 
-const defaults = useSlots().default?.();
+const defaults: Array<any> = useSlots().default?.() || [];
 if (defaults) {
   defaults.forEach(tag => {
     if (tag.type !== Tab) {
@@ -22,7 +22,7 @@ const current = computed(() => {
   return defaults.find(tag => tag.props.title === props.selected);
 });
 const titles = defaults.map(tag => {
-  return tag.props.title;
+  return tag.props.title || '';
 });
 
 const indicator = ref();
@@ -40,7 +40,7 @@ onMounted(() => {
   });
 });
 
-const selectNavItem = (title) => {
+const selectNavItem = (title: string) => {
   emit('update:selected', title);
 };
 </script>
