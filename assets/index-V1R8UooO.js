@@ -1,4 +1,4 @@
-import{_ as n,V as _}from"./VueDemo-mpdMXPxU.js";import{d as i,c,a as t,w as e,F as m,o as a,b as o,e as r,f as k}from"./index-ee7QsQGF.js";const x=i({__name:"ButtonDemo1",setup(l){return(u,s)=>(a(),c(m,null,[t(n,null,{default:e(()=>[o("按钮")]),_:1}),t(n,{theme:"link"},{default:e(()=>[o("链接按钮")]),_:1}),t(n,{theme:"text"},{default:e(()=>[o("文本按钮")]),_:1})],64))}}),d=l=>{l.__sourceCode=`<script setup lang="ts">\r
+import{_ as n,V as _}from"./VueDemo-lq-smuxF.js";import{d as i,c,a as t,w as e,F as m,o as a,b as o,e as r,f as k}from"./index-JUJhnazY.js";const x=i({__name:"ButtonDemo1",setup(l){return(u,s)=>(a(),c(m,null,[t(n,null,{default:e(()=>[o("按钮")]),_:1}),t(n,{theme:"link"},{default:e(()=>[o("链接按钮")]),_:1}),t(n,{theme:"text"},{default:e(()=>[o("文本按钮")]),_:1})],64))}}),d=l=>{l.__sourceCode=`<script setup lang="ts">\r
 import NButton from '@/lib/NButton.vue';\r
 <\/script>\r
 \r
