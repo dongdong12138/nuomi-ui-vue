@@ -1,4 +1,4 @@
-<demo>基础布局</demo>
+<demo>上中下布局</demo>
 
 <script setup lang="ts">
 import NContainer from '@/lib/Container/NContainer.vue';

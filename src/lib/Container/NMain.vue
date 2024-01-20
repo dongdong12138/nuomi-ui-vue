@@ -9,6 +9,7 @@
   color: #303133;
   height: 150px;
   background-color: #ecf5ff;
+  flex: 1; flex-basis: auto;
   display: flex; justify-content: center; align-items: center;
   overflow: auto;
   padding: 20px;
