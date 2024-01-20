@@ -24,8 +24,8 @@ const isVertical = computed(() => {
 
 <style lang="scss">
 .nuomi-container {
-  display: flex;
-  flex-direction: row;
+  flex: 1; flex-basis: auto;
+  display: flex; flex-direction: row;
   &.is-vertical {
     flex-direction: column;
   }
