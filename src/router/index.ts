@@ -17,6 +17,7 @@ const router = createRouter({
         { path: 'dialog', name: 'dialog', component: () => import('@/views/DialogDoc/index.vue') },
         { path: 'tabs', name: 'tabs', component: () => import('@/views/TabsDoc/index.vue') },
         { path: 'container', name: 'container', component: () => import('@/views/ContainerDoc/index.vue') },
+        { path: 'input', name: 'input', component: () => import('@/views/InputDoc/index.vue') },
         { path: '', name: 'redirect', redirect: '/doc/intro' }
       ]
     },
