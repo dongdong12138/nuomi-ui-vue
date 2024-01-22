@@ -1,7 +1,12 @@
 <script setup lang="ts">
-defineProps<{
+withDefaults(defineProps<{
   modelValue: string
-}>()
+  placeholder?: string
+  disabled?: boolean
+}>(), {
+  placeholder: '',
+  disabled: false
+})
 
 const emit = defineEmits<{
   (e: 'update:modelValue', value: string): void
@@ -13,8 +18,8 @@ const onInput = (event) => {
 </script>
 
 <template>
-  <div class="nuomi-input">
-    <input type="text" :value="modelValue" @input="onInput" />
+  <div :class="{'is-disabled': disabled}" class="nuomi-input">
+    <input type="text" :value="modelValue" :placeholder="placeholder" :disabled="disabled" :class="{'nuomi-input-disabled': disabled}" @input="onInput" />
   </div>
 </template>
 
@@ -26,11 +31,22 @@ const onInput = (event) => {
   border: 1px solid #d9d9d9;
   border-radius: 2px;
   padding: 1px 11px;
+  &.is-disabled {
+    background-color: #f5f7fa;
+  }
   > input {
     width: 100%;
     height: 30px;
     border: none;
     outline: none;
+  }
+}
+
+.nuomi-input-disabled {
+  cursor: not-allowed;
+  background-color: #f5f7fa;
+  &:hover {
+    border-color: rgb(217, 217, 217);
   }
 }
 </style>
