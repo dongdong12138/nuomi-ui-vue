@@ -7,8 +7,8 @@ import NCollapseItem from '@/lib/Collapse/NCollapseItem.vue';
 
 <template>
   <n-collapse>
-    <n-collapse-item>内容内容</n-collapse-item>
-    <n-collapse-item>内容内容</n-collapse-item>
-    <n-collapse-item>内容内容</n-collapse-item>
+    <n-collapse-item header="标题1">内容内容</n-collapse-item>
+    <n-collapse-item header="标题2">内容内容</n-collapse-item>
+    <n-collapse-item header="标题3">内容内容</n-collapse-item>
   </n-collapse>
 </template>

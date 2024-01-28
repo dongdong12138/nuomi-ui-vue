@@ -1,5 +1,7 @@
 <script setup lang="ts">
-
+defineProps<{
+  header: string
+}>()
 </script>
 
 <template>
@@ -11,7 +13,7 @@
           <use xlink:href="#icon-arrow-right"></use>
         </svg>
       </span>
-      <span>标题</span>
+      <span>{{ header }}</span>
     </div>
 
     <div class="nuomi-collapse-content">
