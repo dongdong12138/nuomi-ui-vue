@@ -1,22 +1,51 @@
 <script setup lang="ts">
-defineProps<{
+import { ref, inject, onUnmounted } from 'vue';
+import Mitt from '@/store/mitt';
+
+const props = defineProps<{
   header: string
-}>()
+  itemKey: number
+}>();
+
+onUnmounted(() => {
+  Mitt.off(`closeCollapse${collapseId}`);
+  Mitt.off(`openCollapse${collapseId}`);
+  Mitt.off(`changeCollapseKey${collapseId}`, listenCollapseKey);
+});
+
+const collapseId = inject('collapseId');
+const isExtend = ref(false);
+const svgElement = ref<HTMLElement>();
+
+Mitt.on(`changeCollapseKey${collapseId}`, listenCollapseKey);
+
+const toggle = () => {
+  Mitt.emit(isExtend.value ? `closeCollapse${collapseId}` : `openCollapse${collapseId}`, props.itemKey);
+  setSvgAngle();
+};
+
+function listenCollapseKey(val) {
+  isExtend.value = val.includes(props.itemKey);
+  setSvgAngle();
+}
+function setSvgAngle() {
+  svgElement.value.style.transform = `rotate(${isExtend.value ? 90 : 0}deg)`;
+}
 </script>
 
 <template>
   <div class="nuomi-collapseItem">
 
-    <div class="nuomi-collapse-header">
+    <div class="nuomi-collapse-header" @click="toggle">
       <span class="nuomi-collapse-arrow">
-        <svg ref="svgRef">
+        <svg ref="svgElement">
           <use xlink:href="#icon-arrow-right"></use>
         </svg>
       </span>
       <span>{{ header }}</span>
     </div>
 
-    <div class="nuomi-collapse-content">
+    <div v-if="isExtend" class="nuomi-collapse-content">
       <div class="nuomi-collapse-content-box">
         <slot></slot>
       </div>
@@ -33,6 +62,7 @@ defineProps<{
 .nuomi-collapse-header {
   color: #000000d9;
   background-color: #fafafa;
+  cursor: pointer;
   padding: 12px 16px;
   > .nuomi-collapse-arrow > svg {
     width: 14px;
