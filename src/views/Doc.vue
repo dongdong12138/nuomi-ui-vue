@@ -23,6 +23,7 @@ import TopNav from '@/components/TopNav.vue';
         <li><router-link to="/doc/tabs">Tabs 组件</router-link></li>
         <li><router-link to="/doc/container">Container 布局容器</router-link></li>
         <li><router-link to="/doc/input">Input 输入框</router-link></li>
+        <li><router-link to="/doc/collapse">Collapse 折叠面板</router-link></li>
       </ol>
     </aside>
 

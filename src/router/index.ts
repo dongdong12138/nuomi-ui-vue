@@ -18,6 +18,7 @@ const router = createRouter({
         { path: 'tabs', name: 'tabs', component: () => import('@/views/TabsDoc/index.vue') },
         { path: 'container', name: 'container', component: () => import('@/views/ContainerDoc/index.vue') },
         { path: 'input', name: 'input', component: () => import('@/views/InputDoc/index.vue') },
+        { path: 'collapse', name: 'collapse', component: () => import('@/views/CollapseDoc/index.vue') },
         { path: '', name: 'redirect', redirect: '/doc/intro' }
       ]
     },
